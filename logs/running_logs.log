@@ -312,3 +312,84 @@ x==========x]
 [2025-08-09 17:02:31,475: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2025-08-09 19:53:59,242: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-08-09 19:53:59,256: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-09 19:53:59,262: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-09 19:53:59,262: INFO: common: created directory at: artifacts]
+[2025-08-09 19:53:59,262: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-08-09 19:53:59,270: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-08-09 19:54:09,964: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-08-09 19:54:12,110: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-08-09 19:55:35,858: INFO: stage_02_prepare_base_model: *******************]
+[2025-08-09 19:55:35,874: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2025-08-09 19:55:35,874: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-09 19:55:35,874: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-09 19:55:35,874: INFO: common: created directory at: artifacts]
+[2025-08-09 19:55:35,890: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-08-09 19:55:37,728: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-08-09 19:55:42,540: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-08-09 19:55:58,513: INFO: stage_03_model_training: *******************]
+[2025-08-09 19:55:58,513: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-08-09 19:55:58,529: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-09 19:55:58,529: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-09 19:55:58,529: INFO: common: created directory at: artifacts]
+[2025-08-09 19:55:58,529: INFO: common: created directory at: artifacts\training]
+[2025-08-09 20:14:53,120: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-08-09 20:15:18,733: INFO: stage_04_model_evaluation: *******************]
+[2025-08-09 20:15:18,733: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-08-09 20:15:18,748: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-09 20:15:18,748: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-09 20:15:18,764: INFO: common: created directory at: artifacts]
+[2025-08-09 20:17:45,606: INFO: common: json file saved at: scores.json]
+[2025-08-09 20:17:45,606: INFO: common: json file saved at: scores.json]
+[2025-08-09 20:17:50,606: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2025-08-09 20:17:52,263: INFO: builder_impl: Assets written to: C:\Users\ramesh\AppData\Local\Temp\tmp05r1whoq\model\data\model\assets]
+[2025-08-09 20:18:20,372: ERROR: stage_04_model_evaluation: No module named 'distutils._modified']
+Traceback (most recent call last):
+  File "src/cnnClassifier/pipeline/stage_04_model_evaluation.py", line 30, in <module>
+    obj.main()
+  File "src/cnnClassifier/pipeline/stage_04_model_evaluation.py", line 20, in main
+    evaluation.log_into_mlflow()
+  File "C:\Users\ramesh\Deep learning proj\Kidney_Disease_Classification_Deep_learning\src\cnnClassifier\components\model_evaluation_mlflow.py", line 74, in log_into_mlflow
+    mlflow.keras.log_model(self.model, "model")
+  File "C:\Users\ramesh\anaconda3\envs\kidney\lib\site-packages\mlflow\tensorflow\__init__.py", line 222, in log_model
+    return Model.log(
+  File "C:\Users\ramesh\anaconda3\envs\kidney\lib\site-packages\mlflow\models\model.py", line 552, in log
+    mlflow.tracking.fluent.log_artifacts(local_path, mlflow_model.artifact_path)
+  File "C:\Users\ramesh\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\fluent.py", line 817, in log_artifacts
+    MlflowClient().log_artifacts(run_id, local_dir, artifact_path)
+  File "C:\Users\ramesh\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\client.py", line 1069, in log_artifacts
+    self._tracking_client.log_artifacts(run_id, local_dir, artifact_path)
+  File "C:\Users\ramesh\anaconda3\envs\kidney\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 448, in log_artifacts
+    self._get_artifact_repo(run_id).log_artifacts(local_dir, artifact_path)
+  File "C:\Users\ramesh\anaconda3\envs\kidney\lib\site-packages\mlflow\store\artifact\local_artifact_repo.py", line 58, in log_artifacts
+    dir_util.copy_tree(src=local_dir, dst=artifact_dir, preserve_mode=0, preserve_times=0)
+  File "C:\Users\ramesh\anaconda3\envs\kidney\lib\site-packages\setuptools\_distutils\dir_util.py", line 155, in copy_tree
+    return list(itertools.chain.from_iterable(map(copy_one, names)))
+  File "C:\Users\ramesh\anaconda3\envs\kidney\lib\site-packages\setuptools\_distutils\dir_util.py", line 197, in _copy_one
+    file_util.copy_file(
+  File "C:\Users\ramesh\anaconda3\envs\kidney\lib\site-packages\setuptools\_distutils\file_util.py", line 104, in copy_file
+    from distutils._modified import newer
+ModuleNotFoundError: No module named 'distutils._modified'
+[2025-08-09 20:30:27,066: INFO: stage_04_model_evaluation: *******************]
+[2025-08-09 20:30:27,066: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-08-09 20:30:27,098: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-09 20:30:27,098: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-09 20:30:27,098: INFO: common: created directory at: artifacts]
+[2025-08-09 20:32:45,968: INFO: common: json file saved at: scores.json]
+[2025-08-09 20:32:45,968: INFO: common: json file saved at: scores.json]
+[2025-08-09 20:32:50,207: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2025-08-09 20:32:51,521: INFO: builder_impl: Assets written to: C:\Users\ramesh\AppData\Local\Temp\tmpsw66_8md\model\data\model\assets]
+[2025-08-09 20:33:13,815: INFO: dir_util: creating C:\Users\ramesh\Deep learning proj\Kidney_Disease_Classification_Deep_learning\mlruns\0\53e4ab108be7400bb48a40c5e42f7560\artifacts\model\data]
+[2025-08-09 20:33:13,831: INFO: dir_util: creating C:\Users\ramesh\Deep learning proj\Kidney_Disease_Classification_Deep_learning\mlruns\0\53e4ab108be7400bb48a40c5e42f7560\artifacts\model\data\model]
+[2025-08-09 20:33:13,831: INFO: dir_util: creating C:\Users\ramesh\Deep learning proj\Kidney_Disease_Classification_Deep_learning\mlruns\0\53e4ab108be7400bb48a40c5e42f7560\artifacts\model\data\model\assets]
+[2025-08-09 20:33:13,862: INFO: dir_util: creating C:\Users\ramesh\Deep learning proj\Kidney_Disease_Classification_Deep_learning\mlruns\0\53e4ab108be7400bb48a40c5e42f7560\artifacts\model\data\model\variables]
+[2025-08-09 20:33:14,394: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]

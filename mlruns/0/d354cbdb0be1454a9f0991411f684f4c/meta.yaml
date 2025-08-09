@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ramesh/Deep%20learning%20proj/Kidney_Disease_Classification_Deep_learning/mlruns/0/d354cbdb0be1454a9f0991411f684f4c/artifacts
+end_time: 1754750900357
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d354cbdb0be1454a9f0991411f684f4c
+run_name: rogue-hare-484
+run_uuid: d354cbdb0be1454a9f0991411f684f4c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754750866216
+status: 4
+tags: []
+user_id: ramesh
