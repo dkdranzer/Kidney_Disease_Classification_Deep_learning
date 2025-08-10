@@ -5,4 +5,4 @@
 # config yaml is used to keep the variables for reuse.
 # dvc for pipeline tracking where instead of downloading dataset eachtime,training when already done it just skip it. other purpose also is there.
 
-<!-- ecr login uri: 411711548195.dkr.ecr.eu-north-1.amazonaws.com/kidney -->
+<!-- ecr login uri: 411711548195.dkr.ecr.eu-north-1.amazonaws.com/kidney   --> 
