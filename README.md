@@ -6,3 +6,4 @@
 # dvc for pipeline tracking where instead of downloading dataset eachtime,training when already done it just skip it. other purpose also is there.
 
 <!-- ecr login uri: 411711548195.dkr.ecr.eu-north-1.amazonaws.com/kidney   --> 
+#this is not crt
