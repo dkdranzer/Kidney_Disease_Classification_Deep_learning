@@ -4,3 +4,5 @@
 # @ensure annotaions lets say a func with int variable even if u send string it will add so instead ensure annotaion willl throw  errot it takescare of small bugs .
 # config yaml is used to keep the variables for reuse.
 # dvc for pipeline tracking where instead of downloading dataset eachtime,training when already done it just skip it. other purpose also is there.
+
+<!-- ecr login uri: 411711548195.dkr.ecr.eu-north-1.amazonaws.com/kidney -->
